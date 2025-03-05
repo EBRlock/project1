@@ -25,7 +25,7 @@ jobs:
           key: buildozer-global-${{ hashFiles('buildozer.spec') }}
 
       - name: Cache Buildozer build directory
-        uses: actions/cache@v3  # Use v3 or later
+        uses: actions/upload-artifact@v3
         with:
           path: .buildozer
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
